@@ -1,5 +1,5 @@
 # Roomify
-## Live Preview: [Roomify](https://roomify-eight.vercel.app/)
+## Live Preview: [Roomify - https://roomify-eight.vercel.app/](https://roomify-eight.vercel.app/)
 
 ## Overview
 
