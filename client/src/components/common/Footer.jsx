@@ -4,6 +4,7 @@ import { FaInstagram } from "react-icons/fa";
 import { FaFacebook } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import { FaGithub } from "react-icons/fa";
+
 const Footer = () => {
     const footerLinks = ['Home', 'Features', 'Downloads', 'Plans & Pricing', 'Contact Us']
     const socialLinks = [
@@ -25,26 +26,40 @@ const Footer = () => {
         }
     ]
     return (
-        <div className='my-20'>
-            <div className='w-[90%] mx-auto flex justify-between'>
-                <div>
-                    <img src={Logo} alt='logo' className='h-10 w-30' />
-                    <p className='text-gray-500 font-medium text-sm ml-2 mt-2'>Experience efficient collaboration</p>
-                    <p className='text-gray-500 font-medium text-sm ml-2'>Enjoy ultimate video calling app</p>
+        <div className='my-10 md:my-20'>
+            <div className='w-[90%] mx-auto flex flex-col md:flex-row justify-between gap-8 md:gap-0'>
+                {/* Logo and Description */}
+                <div className='text-center md:text-left'>
+                    <img src={Logo} alt='logo' className='h-8 md:h-10 w-auto mx-auto md:mx-0' />
+                    <p className='text-gray-500 font-medium text-sm mt-2'>Experience efficient collaboration</p>
+                    <p className='text-gray-500 font-medium text-sm'>Enjoy ultimate video calling app</p>
                 </div>
-                <div>
-                    <div className='flex gap-5'>
+
+                {/* Links and Social */}
+                <div className='flex flex-col items-center md:items-end gap-4 md:gap-5'>
+                    {/* Navigation Links */}
+                    <div className='flex flex-wrap justify-center md:justify-end gap-3 md:gap-5'>
                         {
                             footerLinks.map((link, index) => (
-                                <p key={index} className='text-black font-medium cursor-pointer'>{link}</p>
+                                <p key={index} className='text-black font-medium cursor-pointer text-sm md:text-base hover:text-gray-700'>{link}</p>
                             ))
                         }
                     </div>
-                    <div className='flex gap-5 float-end items-center'>
-                        <h1 className='mt-4 font-semibold text-gray-500'>Follow us</h1>
+
+                    {/* Social Links */}
+                    <div className='flex items-center gap-3 md:gap-5'>
+                        <h1 className='font-semibold text-gray-500 text-sm md:text-base'>Follow us</h1>
                         {
                             socialLinks.map((social, index) => (
-                                <a href={social.link} key={index} className='text-gray-500 font-medium cursor-pointer hover:text-black text-xl mt-4'>{social.icon}</a>
+                                <a 
+                                    href={social.link} 
+                                    key={index} 
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className='text-gray-500 font-medium cursor-pointer hover:text-black text-lg md:text-xl transition-colors'
+                                >
+                                    {social.icon}
+                                </a>
                             ))
                         }
                     </div>

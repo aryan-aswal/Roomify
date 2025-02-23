@@ -24,13 +24,13 @@ const loginForm = ({setPageState}) => {
         dispatch(login(formData, navigate));
     }
     return (
-        <div>
-            <form className="space-y-4" onSubmit={submitHandler}>
+        <div className='w-full'>
+            <form className="space-y-3 md:space-y-4" onSubmit={submitHandler}>
                 <div className="flex flex-col">
-                    <label className="mb-1 text-[#1F2937]">Email</label>
+                    <label className="mb-1 text-[#1F2937] text-sm md:text-base">Email</label>
                     <input
                         type="email"
-                        className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-[#2563EB]"
+                        className="w-full px-3 md:px-4 py-2 text-sm md:text-base border rounded-lg focus:outline-none focus:ring-2 focus:ring-[#2563EB]"
                         placeholder="Enter your email"
                         onChange={changeHandler}
                         value={formData.email}
@@ -40,11 +40,11 @@ const loginForm = ({setPageState}) => {
                 </div>
 
                 <div className="flex flex-col">
-                    <label className="mb-1 text-[#1F2937]">Password</label>
+                    <label className="mb-1 text-[#1F2937] text-sm md:text-base">Password</label>
                     <div className="relative flex justify-end items-center">
                         <input
                             type={showPassword ? "text" : "password"}
-                            className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-[#2563EB]"
+                            className="w-full px-3 md:px-4 py-2 text-sm md:text-base border rounded-lg focus:outline-none focus:ring-2 focus:ring-[#2563EB]"
                             placeholder="Enter your password"
                             onChange={changeHandler}
                             value={formData.password}
@@ -53,20 +53,20 @@ const loginForm = ({setPageState}) => {
                         />
                         <button
                             type="button"
-                            className="absolute"
+                            className="absolute mr-2 md:mr-4"
                             onClick={() => setShowPassword(!showPassword)}
                         >
                             {showPassword ? (
-                                <IoMdEyeOff className='mr-4 text-2xl' />
+                                <IoMdEyeOff className='text-xl md:text-2xl' />
                             ) : (
-                                <IoMdEye className='mr-4 text-2xl' />
+                                <IoMdEye className='text-xl md:text-2xl' />
                             )}
                         </button>
                     </div>
                 </div>
 
                 {/* Remember Me and Forgot Password */}
-                <div className="flex justify-between items-center">
+                <div className="flex justify-between items-center text-sm md:text-base">
                     <div className="flex items-center">
                         <input
                             type="checkbox"
@@ -81,18 +81,17 @@ const loginForm = ({setPageState}) => {
                 {/* Login Button */}
                 <button
                     type="submit"
-                    className="w-full py-2 text-white bg-[#2563EB] rounded-lg hover:bg-[#1D4ED8] transition duration-200"
+                    className="w-full py-2 text-white bg-[#2563EB] rounded-lg hover:bg-[#1D4ED8] transition duration-200 text-sm md:text-base"
                 >
                     Log in
                 </button>
             </form>
+
             {/* Footer Link */}
-            <p className="text-center text-[#6B7280] mt-1">
+            <p className="text-center text-[#6B7280] mt-3 text-sm md:text-base">
                 Don't have an account? <span className="text-[#2563EB] cursor-pointer" onClick={() => setPageState('signup')}>Create an account</span>
             </p>
         </div>
-
-
     )
 }
 

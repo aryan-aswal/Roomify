@@ -11,6 +11,7 @@ import OTP from './pages/OTP.jsx';
 import PrivateRoute from './components/common/PrivateRoute.jsx';
 import PublicRoute from './components/common/PublicRoute.jsx';
 import Layout from './components/common/Layout.jsx';
+import ErrorPage from './pages/ErrorPage.jsx';
 
 
 function App() {
@@ -31,6 +32,9 @@ function App() {
 
             {/* Route without NavBar */}
             <Route path='/meeting/:channel/:uid' element={<PrivateRoute element={<LiveVideoPage />} />} />
+
+            {/* Error Route - This will catch all unmatched routes */}
+            <Route path='*' element={<ErrorPage />} />
           </Routes>
         </AnimationWrapper>
       </AgoraRTCProvider>
