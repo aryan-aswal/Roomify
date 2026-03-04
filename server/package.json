@@ -18,11 +18,18 @@
     "dotenv": "^16.4.5",
     "express": "^4.21.1",
     "jsonwebtoken": "^9.0.2",
-    "mongoose": "^8.8.1",
-    "nodemailer": "^6.9.16",
+    "mongoose": "^8.9.5",
+    "nodemailer": "^7.0.11",
     "nodemon": "^3.1.7",
     "otp-generator": "^4.0.1",
     "socket.io": "^4.8.1",
     "uuid": "^11.0.3"
+  },
+  "overrides": {
+    "tar": ">=7.5.8",
+    "minimatch": ">=9.0.7",
+    "glob": ">=10.5.0",
+    "jws": ">=3.2.3",
+    "qs": ">=6.14.1"
   }
 }
